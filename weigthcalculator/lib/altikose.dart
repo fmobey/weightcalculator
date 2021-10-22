@@ -7,7 +7,7 @@ class Altikose extends StatelessWidget {
       title: "weigth calculator",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blueGrey,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -25,7 +25,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  TextEditingController wifiPasswordController = TextEditingController();
+  TextEditingController genislik = TextEditingController();
+  TextEditingController uzunluk = TextEditingController();
+  double _katsayi = 0;
+  TextEditingController adet = TextEditingController();
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +54,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
+      body: ListView(
         children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            child: Center(
+              child: Image.asset(
+                'lib/assets/images/altigen.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
@@ -343,7 +354,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'STELL ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -355,7 +366,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -830,22 +845,66 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
-              controller: wifiPasswordController,
+              controller: genislik,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(labelText: 'Genişlik(mm) :'),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
-              controller: wifiPasswordController,
+              keyboardType: TextInputType.number,
+              controller: uzunluk,
               decoration: InputDecoration(labelText: 'Uzunluk(mm) :'),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
-              controller: wifiPasswordController,
+              controller: adet,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(labelText: 'Adet :'),
+            ),
+          ),
+          Container(
+            height: 100,
+            width: 300,
+            margin: EdgeInsets.only(right: 50, left: 50, top: 90),
+            decoration: BoxDecoration(
+                color: Colors.black26,
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(25.0),
+                    bottomLeft: Radius.circular(25.0))),
+            alignment: Alignment.center,
+            child: Container(
+              height: 70,
+              width: 210,
+              decoration: BoxDecoration(
+                  color: Colors.black54,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(25.0),
+                      bottomLeft: Radius.circular(25.0))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Result: ",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  ),
+                  Text(
+                    "${_katsayi}",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

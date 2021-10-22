@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weigthcalculator/altikose.dart';
 
 void main() {
   runApp(MyApp());
@@ -85,6 +86,46 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
+                            'ALTI KÖŞE ',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orange.shade800,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Altikose()),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.orange,
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
                             'KONİK ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
@@ -100,6 +141,45 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             print('Pressed');
                           },
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.orange,
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Altı Köşe ',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orange.shade800,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {},
                         ),
                       ),
                     ),
@@ -198,7 +278,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'KONİK 1',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -210,86 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {
-                            print('Pressed');
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.orange,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'KONİK ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.orange.shade800,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {
-                            print('Pressed');
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.orange,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'KONİK ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.orange.shade800,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {
-                            print('Pressed');
-                          },
+                          onPressed: () {},
                         ),
                       ),
                     ),

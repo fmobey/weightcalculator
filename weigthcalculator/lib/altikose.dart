@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Altikose extends StatelessWidget {
   @override
@@ -25,10 +26,23 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  TextEditingController genislik = TextEditingController();
-  TextEditingController uzunluk = TextEditingController();
+  TextEditingController genislik = TextEditingController(text: '');
+  TextEditingController uzunluk = TextEditingController(text: '');
   double _katsayi = 0;
-  TextEditingController adet = TextEditingController();
+  TextEditingController adet = TextEditingController(text: '');
+  double toplam = 0;
+  double genislik1 = 0;
+  double uzunluk1 = 0;
+  double adet1 = 0;
+
+  doAddition() {
+    setState(() {
+      genislik1 = double.parse(genislik.text.toString());
+      uzunluk1 = double.parse(uzunluk.text.toString());
+      adet1 = double.parse(adet.text.toString());
+      toplam = genislik1 + uzunluk1 + adet1 + _katsayi;
+    });
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'Iron',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -102,7 +116,492 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 7.86;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Aluminum',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 2.72;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Copper',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 8.9;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Bronze',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 8.7;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Glass',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 2.6;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Zinc',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 7.2;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Silver',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 10.5;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Chromium',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 7.1;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Lead',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 11.37;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Nickel',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 8.85;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Brass',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 8.55;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Polyamide',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 1.2;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Pexiglass',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 1.19;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            'Paper',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.93;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -124,237 +623,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'STELL ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -403,7 +671,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -436,7 +708,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -469,7 +745,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -502,7 +782,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -535,7 +819,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -568,7 +856,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -601,7 +893,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -634,205 +930,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 0.00617;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -845,10 +947,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
-              controller: genislik,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Genişlik(mm) :'),
-            ),
+                controller: genislik,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(labelText: 'Genişlik(mm) :'),
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ]),
           ),
           Padding(
             padding: const EdgeInsets.all(16),
@@ -866,6 +970,11 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: InputDecoration(labelText: 'Adet :'),
             ),
           ),
+          TextButton(
+              onPressed: () {
+                doAddition();
+              },
+              child: Text("hesapla")),
           Container(
             height: 100,
             width: 300,
@@ -897,7 +1006,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.white),
                   ),
                   Text(
-                    "${_katsayi}",
+                    "${toplam}",
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w500,

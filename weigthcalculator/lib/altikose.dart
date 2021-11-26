@@ -34,13 +34,24 @@ class _MyHomePageState extends State<MyHomePage> {
   double genislik1 = 0;
   double uzunluk1 = 0;
   double adet1 = 0;
-
+  int integergirdik = 0;
+  String _hatacode = "";
   doAddition() {
     setState(() {
       genislik1 = double.parse(genislik.text.toString());
       uzunluk1 = double.parse(uzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
-      toplam = genislik1 + uzunluk1 + adet1 + _katsayi;
+      toplam = genislik1 * genislik1 * uzunluk1 * adet1 * _katsayi;
+      integergirdik = toplam.round();
+      if (genislik1 == 0 || uzunluk1 == 0 || adet1 == 0 || _katsayi == 0) {
+        setState(() {
+          _hatacode = "Please enter values !";
+        });
+      } else {
+        setState(() {
+          _hatacode = "";
+        });
+      }
     });
   }
 
@@ -585,7 +596,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'Paper',
+                            'Stainless steel',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -599,7 +610,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.93;
+                              _katsayi = 7.95;
                             });
                           },
                         ),
@@ -622,7 +633,44 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            '6061 Aluminum',
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lime,
+                            onPrimary: Colors.white,
+                            shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(25.0))),
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _katsayi = 2.72;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.lime[200],
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25.0),
+                              bottomRight: Radius.circular(25.0))),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: ElevatedButton(
+                          child: Text(
+                            '7005 Aluminum',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -659,7 +707,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            '7020 Aluminum',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -673,7 +721,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.00617;
+                              _katsayi = 2.8;
                             });
                           },
                         ),
@@ -696,7 +744,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            '7075 Aluminum',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -710,7 +758,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.00617;
+                              _katsayi = 2.8;
                             });
                           },
                         ),
@@ -733,7 +781,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'Graphite',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -747,7 +795,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.00617;
+                              _katsayi = 2.1;
                             });
                           },
                         ),
@@ -770,7 +818,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'Cast Steel',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -784,7 +832,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.00617;
+                              _katsayi = 7.2;
                             });
                           },
                         ),
@@ -807,7 +855,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'DKP Sheet',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -821,7 +869,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.00617;
+                              _katsayi = 8;
                             });
                           },
                         ),
@@ -844,7 +892,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'Tungsten',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -858,7 +906,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.00617;
+                              _katsayi = 19.22;
                             });
                           },
                         ),
@@ -881,7 +929,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'Fiber',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -895,44 +943,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _katsayi = 0.00617;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Container(
-                      height: 150,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Colors.lime[200],
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(25.0),
-                              bottomRight: Radius.circular(25.0))),
-                      alignment: Alignment.center,
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        child: ElevatedButton(
-                          child: Text(
-                            'ALTI KÖŞE ',
-                            style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime,
-                            onPrimary: Colors.white,
-                            shape: const BeveledRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(25.0),
-                                    bottomRight: Radius.circular(25.0))),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              _katsayi = 0.00617;
+                              _katsayi = 1.4;
                             });
                           },
                         ),
@@ -949,7 +960,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TextField(
                 controller: genislik,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Genişlik(mm) :'),
+                decoration: InputDecoration(labelText: 'Width(mm) :'),
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ]),
@@ -959,7 +970,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TextField(
               keyboardType: TextInputType.number,
               controller: uzunluk,
-              decoration: InputDecoration(labelText: 'Uzunluk(mm) :'),
+              decoration: InputDecoration(labelText: 'Length(mm) :'),
             ),
           ),
           Padding(
@@ -967,18 +978,31 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TextField(
               controller: adet,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Adet :'),
+              decoration: InputDecoration(labelText: 'How many? :'),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Center(
+            child: Text(
+              _hatacode,
+              style: TextStyle(
+                  fontSize: 12, color: Colors.red, fontWeight: FontWeight.w300),
             ),
           ),
           TextButton(
               onPressed: () {
                 doAddition();
               },
-              child: Text("hesapla")),
+              child: Text(
+                "Calculate",
+                style: TextStyle(fontSize: 24),
+              )),
           Container(
             height: 100,
             width: 300,
-            margin: EdgeInsets.only(right: 50, left: 50, top: 90),
+            margin: EdgeInsets.only(right: 50, left: 50, top: 50),
             decoration: BoxDecoration(
                 color: Colors.black26,
                 shape: BoxShape.rectangle,
@@ -1006,7 +1030,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.white),
                   ),
                   Text(
-                    "${toplam}",
+                    "${integergirdik}",
+                    maxLines: 1,
+                    softWrap: true,
+                    overflow: TextOverflow.clip,
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w500,

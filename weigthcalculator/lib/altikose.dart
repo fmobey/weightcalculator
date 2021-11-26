@@ -36,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double adet1 = 0;
   int integergirdik = 0;
   String _hatacode = "";
+  //hesaplama işlemini buraya yapcan kanka
   doAddition() {
     setState(() {
       genislik1 = double.parse(genislik.text.toString());
@@ -43,15 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
       adet1 = double.parse(adet.text.toString());
       toplam = genislik1 * genislik1 * uzunluk1 * adet1 * _katsayi;
       integergirdik = toplam.round();
-      if (genislik1 == 0 || uzunluk1 == 0 || adet1 == 0 || _katsayi == 0) {
-        setState(() {
-          _hatacode = "Please enter values !";
-        });
-      } else {
-        setState(() {
-          _hatacode = "";
-        });
-      }
     });
   }
 
@@ -988,12 +980,24 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text(
               _hatacode,
               style: TextStyle(
-                  fontSize: 12, color: Colors.red, fontWeight: FontWeight.w300),
+                  fontSize: 18, color: Colors.red, fontWeight: FontWeight.w300),
             ),
           ),
           TextButton(
               onPressed: () {
-                doAddition();
+                if (genislik.text == "" ||
+                    uzunluk.text == "" ||
+                    adet.text == "" ||
+                    _katsayi == 0) {
+                  setState(() {
+                    _hatacode = "Please enter values !";
+                  });
+                } else {
+                  setState(() {
+                    _hatacode = "";
+                    doAddition();
+                  });
+                }
               },
               child: Text(
                 "Calculate",

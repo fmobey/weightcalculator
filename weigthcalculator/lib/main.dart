@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weigthcalculator/altikose.dart';
+import 'package:weigthcalculator/lama.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,14 +30,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'Lama',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -139,7 +132,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     bottomRight: Radius.circular(25.0))),
                           ),
                           onPressed: () {
-                            print('Pressed');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Lama()),
+                            );
                           },
                         ),
                       ),

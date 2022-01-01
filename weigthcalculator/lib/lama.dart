@@ -34,6 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   double toplam = 0;
   double kalinlik1 = 0;
   double genislik1 = 0;
+  int _hasBeenPressed = -1;
+
   double uzunluk1 = 0;
   double adet1 = 0;
   int integergirdik = 0;
@@ -111,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Iron',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 1
                                   ? Colors.black54
@@ -129,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 7.86;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 1;
                               });
                             });
@@ -155,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Aluminum',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 2
                                   ? Colors.black54
@@ -173,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 2.72;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 2;
                               });
                             });
@@ -199,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Copper',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 3
                                   ? Colors.black54
@@ -217,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 8.9;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 3;
                               });
                             });
@@ -243,7 +245,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Bronze',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 4
                                   ? Colors.black54
@@ -261,7 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 8.7;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 4;
                               });
                             });
@@ -287,7 +289,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Glass',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 5
                                   ? Colors.black54
@@ -305,7 +307,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 2.6;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 5;
                               });
                             });
@@ -349,7 +351,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 7.2;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 6;
                               });
                             });
@@ -375,7 +377,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Silver',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 7
                                   ? Colors.black54
@@ -393,7 +395,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 10.5;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 7;
                               });
                             });
@@ -419,7 +421,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Chromium',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 8
                                   ? Colors.black54
@@ -437,7 +439,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 7.1;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 8;
                               });
                             });
@@ -481,7 +483,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 11.37;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 9;
                               });
                             });
@@ -507,7 +509,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Nickel',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 10
                                   ? Colors.black54
@@ -525,7 +527,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 8.85;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 10;
                               });
                             });
@@ -551,7 +553,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Brass',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 11
                                   ? Colors.black54
@@ -569,7 +571,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 8.55;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 11;
                               });
                             });
@@ -595,7 +597,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Polyamide',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 12
                                   ? Colors.black54
@@ -613,7 +615,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 1.2;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 12;
                               });
                             });
@@ -639,7 +641,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Pexiglass',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 13
                                   ? Colors.black54
@@ -657,7 +659,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 1.19;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 13;
                               });
                             });
@@ -683,7 +685,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Stainless steel',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 14
                                   ? Colors.black54
@@ -701,7 +703,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 7.95;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 14;
                               });
                             });
@@ -727,7 +729,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             '6061 Aluminum',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 15
                                   ? Colors.black54
@@ -745,7 +747,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 2.72;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 15;
                               });
                             });
@@ -771,7 +773,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             '7005 Aluminum',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 16
                                   ? Colors.black54
@@ -789,7 +791,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 0.00617;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 16;
                               });
                             });
@@ -833,7 +835,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 2.8;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 17;
                               });
                             });
@@ -859,7 +861,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             '7075 Aluminum',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 18
                                   ? Colors.black54
@@ -877,7 +879,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 2.8;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 18;
                               });
                             });
@@ -903,7 +905,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Graphite',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 19
                                   ? Colors.black54
@@ -921,7 +923,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 2.1;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 19;
                               });
                             });
@@ -947,7 +949,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Cast Steel',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 20
                                   ? Colors.black54
@@ -965,7 +967,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 7.2;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 20;
                               });
                             });
@@ -991,7 +993,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'DKP Sheet',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 21
                                   ? Colors.black54
@@ -1009,7 +1011,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 8;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 21;
                               });
                             });
@@ -1035,7 +1037,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Tungsten',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 22
                                   ? Colors.black54
@@ -1053,7 +1055,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 19.22;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 22;
                               });
                             });
@@ -1079,7 +1081,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: ElevatedButton(
                           child: Text(
                             'Fiber',
-                             style: TextStyle(
+                            style: TextStyle(
                               fontSize: 24,
                               color: _hasBeenPressed != 23
                                   ? Colors.black54
@@ -1097,7 +1099,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             setState(() {
                               _katsayi = 1.4;
-                               setState(() {
+                              setState(() {
                                 _hasBeenPressed = 23;
                               });
                             });
@@ -1111,7 +1113,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-           Padding(
+          Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
                 controller: kalinlik,
@@ -1131,7 +1133,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   FilteringTextInputFormatter.digitsOnly
                 ]),
           ),
-          
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
@@ -1160,8 +1161,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           TextButton(
               onPressed: () {
-                if (
-                    kalinlik.text == "" ||
+                if (kalinlik.text == "" ||
                     genislik.text == "" ||
                     uzunluk.text == "" ||
                     adet.text == "" ||

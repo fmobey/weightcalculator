@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:weigthcalculator/altikose.dart';
 import 'package:weigthcalculator/boru.dart';
+import 'package:weigthcalculator/dolumil.dart';
+import 'package:weigthcalculator/kare.dart';
+import 'package:weigthcalculator/kosebent.dart';
 import 'package:weigthcalculator/lama.dart';
 import 'package:weigthcalculator/saclevha.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -136,10 +138,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Boru())
-                            
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Boru()));
                           },
                         ),
                       ),
@@ -181,9 +182,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Lama())
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Lama()));
                           },
                         ),
                       ),
@@ -220,9 +221,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => SacLevha())
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Saclevha()));
                           },
                         ),
                       ),
@@ -262,11 +263,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                           onPressed: () {
+                          onPressed: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Kare())
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Kare()));
                           },
                         ),
                       ),
@@ -289,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK 1',
+                            'DOLUMİL',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -301,7 +302,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Dolumil()));
+                          },
                         ),
                       ),
                     ),
@@ -328,7 +334,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'KOSEBENT',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -341,7 +347,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     bottomRight: Radius.circular(25.0))),
                           ),
                           onPressed: () {
-                            print('Pressed');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Kosebent()));
                           },
                         ),
                       ),

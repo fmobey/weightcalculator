@@ -44,12 +44,12 @@ class _MyHomePageState extends State<MyHomePage> {
       karekenar1 = double.parse(karekenar.text.toString());
       kareuzunluk1 = double.parse(kareuzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
-      toplam = karekenar * karekenar * kareuzunluk1 * adet1 * _katsayi;
+      toplam = karekenar1 * karekenar1 * kareuzunluk1 * adet1 * _katsayi;
       // kankacım buraya birimleri yazabilirsin atıyorum 100.000 üzerinden sonra ton ile göstersin
       // 100.000.000 den sonra daha büyük bir birimle yazdırsın onu sen ayarlarsın kardeşim
       // 3den fazla değerde else if yapısını kullanabilirsin
-      //mesela burda 1000 kg 1 ton oldugu çin 1000 e bölüp yazdırıyorum 
-      // cıkan değer 99999 den büyükse 1000 e bölüyor buraları anladım hepsinde aynı kod çalışsa hata vermez kopyaladıgım icin 
+      //mesela burda 1000 kg 1 ton oldugu çin 1000 e bölüp yazdırıyorum
+      // cıkan değer 99999 den büyükse 1000 e bölüyor buraları anladım hepsinde aynı kod çalışsa hata vermez kopyaladıgım icin
       if (toplam > 99999) {
         if (toplam != 0) {
           yazilandeger = ((toplam.round()) / 1000).toString() + " ton";
@@ -1119,8 +1119,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           TextButton(
             onPressed: () {
-              if (genislik.text == "" ||
-                  uzunluk.text == "" ||
+              if (kareuzunluk.text == "" ||
+                  karekenar.text == "" ||
                   adet.text == "" ||
                   _katsayi == 0) {
                 setState(() {

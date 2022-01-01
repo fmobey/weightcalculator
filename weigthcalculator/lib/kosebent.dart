@@ -27,12 +27,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  TextEditingController genislik = TextEditingController(text: '');
+  TextEditingController rdiskavis = TextEditingController(text: '');
+  TextEditingController rickavis = TextEditingController(text: '');
+  TextEditingController etkalinligi = TextEditingController(text: '');
   TextEditingController uzunluk = TextEditingController(text: '');
   TextEditingController adet = TextEditingController(text: '');
   double _katsayi = 0;
   double toplam = 0;
   double genislik1 = 0;
+  double rdiskavis1 = 0;
+  double rickavis1 = 0;
+  double etkalinligi1 = 0;
   double uzunluk1 = 0;
   double adet1 = 0;
   String yazilandeger = "";
@@ -41,15 +46,22 @@ class _MyHomePageState extends State<MyHomePage> {
   //hesaplama işlemini buraya yapcan kanka
   doAddition() {
     setState(() {
-      genislik1 = double.parse(genislik.text.toString());
+      rdiskavis1 = double.parse(rdiskavis.text.toString());
+      rickavis1 = double.parse(rickavis.text.toString());
+      etkalinligi1 = double.parse(etkalinligi.text.toString());
+
       uzunluk1 = double.parse(uzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
-      toplam = genislik1 * genislik1 * uzunluk1 * adet1 * _katsayi;
+      toplam = (etkalinligi1 * (2 * uzunluk1 - etkalinligi1) +
+              0.2146 * (rdiskavis1 * rickavis1 - 2 * rdiskavis1 * rdiskavis1)) *
+          adet1 *
+          _katsayi;
       // kankacım buraya birimleri yazabilirsin atıyorum 100.000 üzerinden sonra ton ile göstersin
       // 100.000.000 den sonra daha büyük bir birimle yazdırsın onu sen ayarlarsın kardeşim
       // 3den fazla değerde else if yapısını kullanabilirsin
-      //mesela burda 1000 kg 1 ton oldugu çin 1000 e bölüp yazdırıyorum 
-      // cıkan değer 99999 den büyükse 1000 e bölüyor buraları anladım hepsinde aynı kod çalışsa hata vermez kopyaladıgım icin 
+      //mesela burda 1000 kg 1 ton oldugu çin 1000 e bölüp yazdırıyorum
+      // cıkan değer 99999 den büyükse 1000 e bölüyor buraları anladım hepsinde aynı kod çalışsa hata vermez kopyaladıgım icin
+      //MVVM = model - view -view model
       if (toplam > 99999) {
         if (toplam != 0) {
           yazilandeger = ((toplam.round()) / 1000).toString() + " ton";
@@ -1084,9 +1096,31 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
-                controller: genislik,
+                controller: rdiskavis,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Width(mm) :'),
+                decoration:
+                    InputDecoration(labelText: 'R Outer Curvature(mm) :'),
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(
+                controller: rickavis,
+                keyboardType: TextInputType.number,
+                decoration:
+                    InputDecoration(labelText: 'R İndoor Curvature(mm) :'),
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(
+                controller: etkalinligi,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(labelText: 'Thickness(mm) :'),
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ]),
@@ -1119,7 +1153,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           TextButton(
             onPressed: () {
-              if (genislik.text == "" ||
+              if (etkalinligi.text == "" ||
+                  rdiskavis.text == "" ||
+                  rdiskavis.text == "" ||
                   uzunluk.text == "" ||
                   adet.text == "" ||
                   _katsayi == 0) {

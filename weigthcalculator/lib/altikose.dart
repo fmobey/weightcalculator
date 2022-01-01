@@ -1159,7 +1159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(25.0),
                       bottomLeft: Radius.circular(25.0))),
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(

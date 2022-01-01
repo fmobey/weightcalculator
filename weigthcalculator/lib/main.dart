@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weigthcalculator/altikose.dart';
+import 'package:weigthcalculator/boru.dart';
 import 'package:weigthcalculator/lama.dart';
+import 'package:weigthcalculator/saclevha.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -119,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'Lama',
+                            'BORU',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -134,7 +137,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Lama()),
+                              MaterialPageRoute(builder: (context) => Boru())
+                            
                             );
                           },
                         ),
@@ -163,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'Altı Köşe ',
+                            'LAMA ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -175,7 +179,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Lama())
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -197,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'SACLEVHA ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -210,7 +219,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     bottomRight: Radius.circular(25.0))),
                           ),
                           onPressed: () {
-                            print('Pressed');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SacLevha())
+                            );
                           },
                         ),
                       ),
@@ -238,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'KARE ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -250,8 +262,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {
-                            print('Pressed');
+                           onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Kare())
+                            );
                           },
                         ),
                       ),

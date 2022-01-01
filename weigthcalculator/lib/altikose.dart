@@ -45,9 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
       uzunluk1 = double.parse(uzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
       toplam = genislik1 * genislik1 * uzunluk1 * adet1 * _katsayi;
+      //(3^1/2)/2 eklenecek!!!
       // kankacım buraya birimleri yazabilirsin atıyorum 100.000 üzerinden sonra ton ile göstersin
       // 100.000.000 den sonra daha büyük bir birimle yazdırsın onu sen ayarlarsın kardeşim
       // 3den fazla değerde else if yapısını kullanabilirsin
+      //mesela burda 1000 kg 1 ton oldugu çin 1000 e bölüp yazdırıyorum 
+      // cıkan değer 99999 den büyükse 1000 e bölüyor buraları anladım hepsinde aynı kod çalışsa hata vermez kopyaladıgım icin 
       if (toplam > 99999) {
         if (toplam != 0) {
           yazilandeger = ((toplam.round()) / 1000).toString() + " ton";

@@ -49,13 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
       rdiskavis1 = double.parse(rdiskavis.text.toString());
       rickavis1 = double.parse(rickavis.text.toString());
       etkalinligi1 = double.parse(etkalinligi.text.toString());
-
       uzunluk1 = double.parse(uzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
-      toplam = (etkalinligi1 * (2 * uzunluk1 - etkalinligi1) +
-              0.2146 * (rdiskavis1 * rickavis1 - 2 * rdiskavis1 * rdiskavis1)) *
-          adet1 *
-          _katsayi;
+      toplam = (etkalinligi1 * (2 * uzunluk1 - etkalinligi1) + 0.2146 * (rickavis1 * rickavis1 - 2 * rdiskavis1 * rdiskavis1)) * adet1 * _katsayi;
       // kankacım buraya birimleri yazabilirsin atıyorum 100.000 üzerinden sonra ton ile göstersin
       // 100.000.000 den sonra daha büyük bir birimle yazdırsın onu sen ayarlarsın kardeşim
       // 3den fazla değerde else if yapısını kullanabilirsin

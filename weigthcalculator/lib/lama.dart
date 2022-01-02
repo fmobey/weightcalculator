@@ -35,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
   double kalinlik1 = 0;
   double genislik1 = 0;
   int _hasBeenPressed = -1;
-
   double uzunluk1 = 0;
   double adet1 = 0;
   int integergirdik = 0;

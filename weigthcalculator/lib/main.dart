@@ -373,7 +373,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'KUTUPROFİL ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -386,7 +386,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     bottomRight: Radius.circular(25.0))),
                           ),
                           onPressed: () {
-                            print('Pressed');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Kutuprofil()));
                           },
                         ),
                       ),
@@ -414,7 +417,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'H PROFİL ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -426,8 +429,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                          onPressed: () {
-                            print('Pressed');
+                           onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Hprofil()));
                           },
                         ),
                       ),
@@ -450,7 +456,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KONİK ',
+                            'T PROFİL ',
                             style:
                                 TextStyle(fontSize: 24, color: Colors.black54),
                           ),
@@ -463,7 +469,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     bottomRight: Radius.circular(25.0))),
                           ),
                           onPressed: () {
-                            print('Pressed');
+                           Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Tprofil()));
                           },
                         ),
                       ),

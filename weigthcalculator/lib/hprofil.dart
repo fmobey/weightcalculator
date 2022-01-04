@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:math' as math;
 
-class Iuprofil extends StatelessWidget {
+class Hprofil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -1087,7 +1087,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: TextField(
                 controller: cap,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Width(mm) :'),
+                decoration: InputDecoration(labelText: 'Diameter(mm) :'),
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ]),

@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:weigthcalculator/altikose.dart';
 import 'package:weigthcalculator/boru.dart';
 import 'package:weigthcalculator/dolumil.dart';
+import 'package:weigthcalculator/hprofil.dart';
 import 'package:weigthcalculator/kare.dart';
 import 'package:weigthcalculator/kosebent.dart';
+import 'package:weigthcalculator/kutuprofil.dart';
 import 'package:weigthcalculator/lama.dart';
 import 'package:weigthcalculator/saclevha.dart';
+import 'package:weigthcalculator/tprofil.dart';
 
 void main() {
   runApp(MyApp());
@@ -429,7 +432,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     topLeft: Radius.circular(25.0),
                                     bottomRight: Radius.circular(25.0))),
                           ),
-                           onPressed: () {
+                          onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -469,7 +472,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     bottomRight: Radius.circular(25.0))),
                           ),
                           onPressed: () {
-                           Navigator.push(
+                            Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => Tprofil()));

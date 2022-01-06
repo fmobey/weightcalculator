@@ -27,12 +27,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  TextEditingController genislik = TextEditingController(text: '');
+  TextEditingController bkenari = TextEditingController(text: '');
+  TextEditingController akenari = TextEditingController(text: '');
+
+  TextEditingController tkalinlik = TextEditingController(text: '');
+
   TextEditingController uzunluk = TextEditingController(text: '');
   TextEditingController adet = TextEditingController(text: '');
   double _katsayi = 0;
   double toplam = 0;
-  double genislik1 = 0;
+  double bkenari1 = 0;
+  double akenari1 = 0;
+  double tkalinlik1 = 0;
+
   double uzunluk1 = 0;
   double adet1 = 0;
   String yazilandeger = "";
@@ -41,10 +48,18 @@ class _MyHomePageState extends State<MyHomePage> {
   //hesaplama işlemini buraya yapcan kanka
   doAddition() {
     setState(() {
-      genislik1 = double.parse(genislik.text.toString());
+      bkenari1 = double.parse(bkenari.text.toString());
+      akenari1 = double.parse(akenari.text.toString());
+      tkalinlik1 = double.parse(tkalinlik.text.toString());
+
       uzunluk1 = double.parse(uzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
-      toplam = (genislik1 * genislik1 * uzunluk1 * adet1 * _katsayi) / 1000000;
+      toplam =
+          (((bkenari1 * tkalinlik1) + tkalinlik1 * (akenari1 - tkalinlik1)) *
+                  uzunluk1 *
+                  adet1 *
+                  _katsayi) /
+              1000000;
       if (toplam > 9999) {
         if (toplam != 0) {
           yazilandeger = ((toplam.round()) / 1000).toString() + " ton";
@@ -98,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.only(top: 20),
             child: Center(
               child: Image.asset(
-                'lib/assets/images/hprofil.png',
+                'lib/assets/images/tprofil.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -1090,9 +1105,29 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
-                controller: genislik,
+                controller: akenari,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Width(mm) :'),
+                decoration: InputDecoration(labelText: 'A-Edge(mm) :'),
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(
+                controller: bkenari,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(labelText: 'B-Edge(mm) :'),
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(
+                controller: tkalinlik,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(labelText: 'Thickness(mm) :'),
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ]),
@@ -1125,7 +1160,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           TextButton(
             onPressed: () {
-              if (genislik.text == "" ||
+              if (akenari.text == "" ||
+                  bkenari.text == "" ||
+                  tkalinlik.text == "" ||
                   uzunluk.text == "" ||
                   adet.text == "" ||
                   _katsayi == 0) {

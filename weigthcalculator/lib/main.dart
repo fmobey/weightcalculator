@@ -473,7 +473,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Hprofil()));
+                                    builder: (context) => Tprofil()));
                           },
                         ),
                       ),
@@ -512,7 +512,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Tprofil()));
+                                    builder: (context) => Hprofil()));
                           },
                         ),
                       ),

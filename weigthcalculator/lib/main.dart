@@ -9,6 +9,7 @@ import 'package:weigthcalculator/kutuprofil.dart';
 import 'package:weigthcalculator/lama.dart';
 import 'package:weigthcalculator/saclevha.dart';
 import 'package:weigthcalculator/tprofil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,6 +39,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  _launchURL() async {
+    const url = 'https://github.com/fmobey/weightcalculator';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,17 +55,44 @@ class _MyHomePageState extends State<MyHomePage> {
           preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.deepPurple.shade800,
-            title: Container(
-              margin: EdgeInsets.only(top: 20),
-              child: Center(
-                child: Image.asset(
-                  'lib/assets/images/1.png',
-                  fit: BoxFit.cover,
-                  height: 50,
-                  width: 250,
-                ),
-              ),
-            ),
+            title: GestureDetector(
+                onLongPress: () {
+                  showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      actionsAlignment: MainAxisAlignment.spaceAround,
+                      backgroundColor: Colors.white70,
+                      title: Text(
+                          "Bu uygulama Furkan Metin OĞUZ ve Büşra ÜREK tarafından yapılmıştır"),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            _launchURL();
+                          },
+                          child: Text("Github",
+                              style: TextStyle(color: Colors.black)),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context, 'Cancel');
+                          },
+                          child: Text("Cancel",
+                              style: TextStyle(color: Colors.black)),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: Center(
+                      child: Image.asset(
+                        'lib/assets/images/1.png',
+                        fit: BoxFit.cover,
+                        height: 50,
+                        width: 250,
+                      ),
+                    ))),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 bottom: Radius.circular(25),
@@ -87,9 +124,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'ALTI KÖŞE ',
+                            'SIX CORNER ',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -127,9 +164,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'BORU',
+                            'PIPE',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -173,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Text(
                             'LAMA ',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -210,9 +247,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'SACLEVHA ',
+                            'SHEET METAL ',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -254,9 +291,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KARE ',
+                            'SQUARE ',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -293,9 +330,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'DOLUMİL',
+                            'FULL MILES',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -337,9 +374,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KOSEBENT',
+                            'BRACKET',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -376,9 +413,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'KUTUPROFİL ',
+                            'BOX PROFILE ',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -420,9 +457,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'H PROFİL ',
+                            'H PROFILE ',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,
@@ -459,9 +496,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 100,
                         child: ElevatedButton(
                           child: Text(
-                            'T PROFİL ',
+                            'T PROFILE ',
                             style:
-                                TextStyle(fontSize: 24, color: Colors.black54),
+                                TextStyle(fontSize: 21, color: Colors.black54),
                           ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.orange.shade800,

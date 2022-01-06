@@ -34,9 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController adet = TextEditingController(text: '');
   double _katsayi = 0;
   double toplam = 0;
-  double discap1  = 0;
+  double discap1 = 0;
   double etkalinligi1 = 0;
-  double uzunluk1  = 0;
+  double uzunluk1 = 0;
   double adet1 = 0;
   String yazilandeger = "";
   int _hasBeenPressed = -1;
@@ -48,18 +48,26 @@ class _MyHomePageState extends State<MyHomePage> {
       etkalinligi1 = double.parse(etkalinligi.text.toString());
       uzunluk1 = double.parse(etkalinligi.text.toString());
       adet1 = double.parse(adet.text.toString());
-      toplam = (discap1 - etkalinligi1)*etkalinligi1 * uzunluk1 * adet1 * _katsayi;
-      // kankacım buraya birimleri yazabilirsin atıyorum 100.000 üzerinden sonra ton ile göstersin
-      // 100.000.000 den sonra daha büyük bir birimle yazdırsın onu sen ayarlarsın kardeşim
-      // 3den fazla değerde else if yapısını kullanabilirsin
+      toplam = ((discap1 - etkalinligi1) *
+              etkalinligi1 *
+              uzunluk1 *
+              adet1 *
+              _katsayi) /
+          1000000;
       if (toplam > 99999) {
         if (toplam != 0) {
           yazilandeger = ((toplam.round()) / 1000).toString() + " ton";
         }
-      } else {
+      } else if (toplam > 999 && toplam < 9998) {
         if (toplam != 0) {
           yazilandeger = toplam.round().toString() + " Kg";
         }
+      } else if (toplam < 0) {
+        setState(() {
+          _hatacode = "please enter a valid value";
+        });
+      } else {
+        yazilandeger = toplam.roundToDouble().toString() + " Kg";
       }
     });
   }
@@ -1086,7 +1094,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
-                controller:discap,
+                controller: discap,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(labelText: 'outer diameter(mm) :'),
                 inputFormatters: <TextInputFormatter>[
@@ -1099,8 +1107,9 @@ class _MyHomePageState extends State<MyHomePage> {
               keyboardType: TextInputType.number,
               controller: etkalinligi,
               decoration: InputDecoration(labelText: 'wall thickness(mm) :'),
-            ),),
-             Padding(
+            ),
+          ),
+          Padding(
             padding: const EdgeInsets.all(16),
             child: TextField(
               keyboardType: TextInputType.number,

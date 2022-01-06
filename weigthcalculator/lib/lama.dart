@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double adet1 = 0;
   int integergirdik = 0;
   String _hatacode = "";
+  String yazilandeger = "";
   //hesaplama işlemini buraya yapcan kanka
   doAddition() {
     setState(() {
@@ -46,9 +47,24 @@ class _MyHomePageState extends State<MyHomePage> {
       genislik1 = double.parse(genislik.text.toString());
       uzunluk1 = double.parse(uzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
-      toplam = kalinlik1 * genislik1 * uzunluk1 * adet1 * _katsayi;
+      toplam = (kalinlik1 * genislik1 * uzunluk1 * adet1 * _katsayi) / 1000000;
       integergirdik = toplam.round();
     });
+    if (toplam > 99999) {
+      if (toplam != 0) {
+        yazilandeger = ((toplam.round()) / 1000).toString() + " ton";
+      }
+    } else if (toplam > 999 && toplam < 9998) {
+      if (toplam != 0) {
+        yazilandeger = toplam.round().toString() + " Kg";
+      }
+    } else if (toplam < 0) {
+      setState(() {
+        _hatacode = "please enter a valid value";
+      });
+    } else {
+      yazilandeger = toplam.roundToDouble().toString() + " Kg";
+    }
   }
 
   Widget build(BuildContext context) {
@@ -1210,7 +1226,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.white),
                   ),
                   Text(
-                    "${integergirdik}",
+                    "${yazilandeger}",
                     maxLines: 1,
                     softWrap: true,
                     overflow: TextOverflow.clip,

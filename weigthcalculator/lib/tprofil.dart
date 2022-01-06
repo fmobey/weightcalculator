@@ -45,25 +45,25 @@ class _MyHomePageState extends State<MyHomePage> {
       uzunluk1 = double.parse(uzunluk.text.toString());
       adet1 = double.parse(adet.text.toString());
       toplam = (genislik1 * genislik1 * uzunluk1 * adet1 * _katsayi) / 1000000;
-      // kankacım buraya birimleri yazabilirsin atıyorum 100.000 üzerinden sonra ton ile göstersin
-      // 100.000.000 den sonra daha büyük bir birimle yazdırsın onu sen ayarlarsın kardeşim
-      // 3den fazla değerde else if yapısını kullanabilirsin
-      //mesela burda 1000 kg 1 ton oldugu çin 1000 e bölüp yazdırıyorum
-      // cıkan değer 99999 den büyükse 1000 e bölüyor buraları anladım hepsinde aynı kod çalışsa hata vermez kopyaladıgım icin
-      if (toplam > 99999) {
+      if (toplam > 9999) {
         if (toplam != 0) {
           yazilandeger = ((toplam.round()) / 1000).toString() + " ton";
         }
-      } else if (toplam > 999 && toplam < 9998) {
+      } else if (toplam > 500 && toplam < 9999) {
         if (toplam != 0) {
-          yazilandeger = toplam.round().toString() + " Kg";
+          yazilandeger = toplam.roundToDouble().toString() + " Kg";
         }
-      } else if (toplam < 0) {
-        setState(() {
-          _hatacode = "please enter a valid value";
-        });
-      } else {
-        yazilandeger = toplam.roundToDouble().toString() + " Kg";
+      } else if (toplam > 100 && toplam < 500) {
+        if (toplam != 0) {
+          yazilandeger = (toplam * 1000).round().toString() + " Gr";
+        }
+      } else if (toplam > 0 && toplam < 100) {
+        if (toplam != 0) {
+          yazilandeger =
+              (toplam * 1000).toStringAsPrecision(2).toString() + " Gr";
+        }
+      } else if (toplam <= 0) {
+        _hatacode = "Please enter a valid value!";
       }
     });
   }

@@ -50,20 +50,25 @@ class _MyHomePageState extends State<MyHomePage> {
               _katsayi) /
           1000000;
 
-      if (toplam > 99999) {
+      if (toplam > 9999) {
         if (toplam != 0) {
           yazilandeger = ((toplam.round()) / 1000).toString() + " ton";
         }
-      } else if (toplam > 999 && toplam < 9998) {
+      } else if (toplam > 500 && toplam < 9999) {
         if (toplam != 0) {
-          yazilandeger = toplam.round().toString() + " Kg";
+          yazilandeger = toplam.roundToDouble().toString() + " Kg";
         }
-      } else if (toplam < 0) {
-        setState(() {
-          _hatacode = "please enter a valid value";
-        });
-      } else {
-        yazilandeger = toplam.roundToDouble().toString() + " Kg";
+      } else if (toplam > 100 && toplam < 500) {
+        if (toplam != 0) {
+          yazilandeger = (toplam * 1000).round().toString() + " Gr";
+        }
+      } else if (toplam > 0 && toplam < 100) {
+        if (toplam != 0) {
+          yazilandeger =
+              (toplam * 1000).toStringAsPrecision(2).toString() + " Gr";
+        }
+      } else if (toplam <= 0) {
+        _hatacode = "Please enter a valid value!";
       }
     });
   }
